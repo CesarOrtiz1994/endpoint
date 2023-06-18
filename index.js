@@ -25,7 +25,7 @@ app.get("/private", (req, res) => {
 
     validateExpiration(payload);
 
-    res.send("Soy un EndPoint privado");
+    res.send("Felicidades, tienes acceso a este EndPoint");
   } catch (error) {
     res.status(401).send({ error: error.message });
   }
@@ -42,6 +42,7 @@ app.post("/token", (req, res) => {
     res.status(400).send({ error: error.message });
   }
 });
+
 
 // Iniciar el servidor
 app.listen(PORT, () => console.log(`🌐 Escuchando en  http://localhost:${PORT}`));
